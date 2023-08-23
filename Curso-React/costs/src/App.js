@@ -4,6 +4,8 @@ import Contact from "./components/pages/Contact";
 import Company from "./components/pages/Company";
 import NewProject from "./components/pages/NewProject";
 
+import Container from "./components/layout/Container";
+
 export default function App() {
   return (
     <Router>
@@ -13,12 +15,14 @@ export default function App() {
         <Link to="/company">Empresa</Link>
         <Link to="/newproject">Novo projeto</Link>
       </div>
-      <Routes>
-        <Route exact path="/" element={<Home/>} />
-         <Route exact path="/company" element={<Company/>}/>
-         <Route exact path="/contact" element={<Contact/>}/>
-         <Route exact path="/newproject" element={<NewProject/>}/>
-      </Routes>
+      <Container customClass="min-height">
+        <Routes>
+            <Route exact path="/" element={<Home/>} />
+            <Route exact path="/company" element={<Company/>}/>
+            <Route exact path="/contact" element={<Contact/>}/>
+            <Route exact path="/newproject" element={<NewProject/>}/>
+        </Routes>
+      </Container>
       <p>Footer</p>
     </Router>
   );
